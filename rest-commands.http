@@ -1,0 +1,65 @@
+GET http://localhost:8000/rest/v1/projects HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:3000/api/projects HTTP/1.1
+
+
+###
+GET http://localhost:5100/alive HTTP/1.1
+
+
+###
+
+
+###
+POST http://localhost:5100/api/users HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNjc1MjgxNzkyLCJzdWIiOiIzZjg1MjkzMi01ZDhkLTRhM2YtODkzOS0zZWMwYjkyYmY3MTAiLCJlbWFpbCI6InN5c2FkbWluQG1haWwub3N1cy5jbG91ZCIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXSwidGVuYW50IjoiYmFja29mZmljZSJ9LCJ1c2VyX21ldGFkYXRhIjp7ImRpc3BsYXlOYW1lIjoiU3lzdGVtIEFkbWluaXN0cmF0b3IiLCJlbWFpbCI6InN5c2FkbWluQG1haWwub3N1cy5jbG91ZCIsInVzZXJuYW1lIjoic3lzYWRtaW4ifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJzZXNzaW9uX2lkIjoiN2U1YjQxYmUtZjYzOC00N2VkLThkYWYtZTM1ZTk4YjJhZGQwIn0.n118mdvL3l3jG90RLs49_QOaW-TiB5DdslvD8CRY3MI
+
+{
+  "email": "sysadmin@test.com",
+  "password": "qwsa1234asxz",
+  "username": "test",
+  "display_name": "test"
+}
+
+###
+
+POST https://localhost:8000/auth/v1/admin/users HTTP/1.1
+content-type: application/json
+apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAic2VydmljZV9yb2xlIiwKICAgICJpc3MiOiAic3VwYWJhc2UiLAogICAgImlhdCI6IDE2NzQ3NjUwMDAsCiAgICAiZXhwIjogMTgzMjUzMTQwMAp9.Zy2VXNJ2xv_7FJDp5mvy_TN7dKVZUaqGiQpX6oq6KzM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAic2VydmljZV9yb2xlIiwKICAgICJpc3MiOiAic3VwYWJhc2UiLAogICAgImlhdCI6IDE2NzQ3NjUwMDAsCiAgICAiZXhwIjogMTgzMjUzMTQwMAp9.Zy2VXNJ2xv_7FJDp5mvy_TN7dKVZUaqGiQpX6oq6KzM
+
+{
+  "email": "sysadmin@test.com",
+  "password": "qwsa1234asxz",
+  "email_confirm": true,
+  "user_metadata": {
+    "username": "sysadmin",
+    "displayName": "System Administrator",
+    "email": "sysadmin@test.com"
+  },
+  "app_metadata": { "tenant": "backoffice" }
+}
+
+###
+
+GET  http://localhost:8000/auth/v1/admin/users HTTP/1.1
+content-type: application/json
+apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAic2VydmljZV9yb2xlIiwKICAgICJpc3MiOiAic3VwYWJhc2UiLAogICAgImlhdCI6IDE2NzQ3NjUwMDAsCiAgICAiZXhwIjogMTgzMjUzMTQwMAp9.Zy2VXNJ2xv_7FJDp5mvy_TN7dKVZUaqGiQpX6oq6KzM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAic2VydmljZV9yb2xlIiwKICAgICJpc3MiOiAic3VwYWJhc2UiLAogICAgImlhdCI6IDE2NzQ3NjUwMDAsCiAgICAiZXhwIjogMTgzMjUzMTQwMAp9.Zy2VXNJ2xv_7FJDp5mvy_TN7dKVZUaqGiQpX6oq6KzM
+
+
+###
+
+POST  http://localhost:8000/auth/v1/token?grant_type=password HTTP/1.1
+content-type: application/json
+apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAiYW5vbiIsCiAgICAiaXNzIjogInN1cGFiYXNlIiwKICAgICJpYXQiOiAxNjc0NzY1MDAwLAogICAgImV4cCI6IDE4MzI1MzE0MDAKfQ.lnI0ZVCu5yX2u47kKiiEY_dAEYOZH-Wxb1vs8yyCZnE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICAgInJvbGUiOiAiYW5vbiIsCiAgICAiaXNzIjogInN1cGFiYXNlIiwKICAgICJpYXQiOiAxNjc0NzY1MDAwLAogICAgImV4cCI6IDE4MzI1MzE0MDAKfQ.lnI0ZVCu5yX2u47kKiiEY_dAEYOZH-Wxb1vs8yyCZnE
+
+{
+  "email": "tenant1@test.com",
+  "password": "tenant1234qwsa"
+}
