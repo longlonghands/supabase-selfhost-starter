@@ -243,7 +243,7 @@ services:
       - ./infra/db/roles.sql:/docker-entrypoint-initdb.d/roles.sql
       # Must be superuser to enable pg_net extension
       - ./infra/db/webhooks.sql:/etc/postgresql.schema.sql
-      - ./volumes/db/data:/var/lib/postgresql/data
+      - ./infra/volumes/db-data:/var/lib/postgresql/data
       # Seed data should be inserted last (alphabetical order)
       - ./infra/db/data.sql:/docker-entrypoint-initdb.d/seed.sql
   mail:
