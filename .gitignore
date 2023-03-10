@@ -31,9 +31,9 @@ infra/volumes/db/data
 infra/volumes/storage
 test.http
 
-/dist
-/migrations
-out/
+dist
+output
+out
 build
 
 /tmp

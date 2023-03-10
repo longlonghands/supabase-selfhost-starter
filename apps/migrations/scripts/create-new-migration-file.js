@@ -1,14 +1,13 @@
-const fs = require('fs')
+import fs from 'fs'
 
 if (process.argv.length < 3) {
-  return
+  exit()
 }
 const name = process.argv[2]
 const filename = `${Date.now()}_${name}.ts`
 fs.writeFile(
   filename,
   `
-/* eslint-disable @typescript-eslint/naming-convention */
 import { MigrationBuilder, ColumnDefinitions } from 'node-pg-migrate';
 
 export const shorthands: ColumnDefinitions | undefined = undefined;

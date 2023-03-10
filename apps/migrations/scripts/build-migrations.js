@@ -1,11 +1,14 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
-const { execSync } = require('child_process')
-const fs = require('fs')
+import { execSync } from 'child_process'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
-const path = require('path')
-
-const srcDir = path.join(__dirname, '..', 'apps', 'migrations')
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const srcDir = path.join(__dirname, '..', 'src')
 
 function getMigrationFiles(dir) {
   let files = []
@@ -39,6 +42,6 @@ migrationFiles.forEach((m) => {
   const parsed = path.parse(m.filePath)
 
   execSync(
-    `npx esbuild ${m.filePath} --platform=node --bundle --packages=external --outfile=./migrations/${parsed.name}.js`
+    `npx esbuild ${m.filePath} --platform=node --bundle --packages=external --outfile=./out/${parsed.name}.js`
   )
 })
