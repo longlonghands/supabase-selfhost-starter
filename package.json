@@ -11,6 +11,9 @@
   "scripts": {
     "supabase": "supabase",
     "lint": "turbo run lint",
+    "migrations:create": "pnpm --filter migrations run create",
+    "migrations:build": "pnpm --filter migrations run build",
+    "migrations:up": "pnpm --filter migrations run migrate up",
     "docker:dev": "docker compose -f ./infra/docker-compose.dev.yml --project-directory . up",
     "docker:down": "docker compose -f ./infra/docker-compose.dev.yml --project-directory . down --remove-orphans",
     "docker:remove": "docker compose -f ./infra/docker-compose.dev.yml --project-directory . rm -vfs",
