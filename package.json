@@ -23,11 +23,10 @@
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "nx": "16.7.2"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.28.0"
 }

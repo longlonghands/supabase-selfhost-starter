@@ -1,0 +1,39 @@
+{
+  "root": "app-migrations",
+  "sourceRoot": "app-migrations",
+  "projectType": "application",
+  "targets": {
+    "create": {
+      "executor": "nx:run-script",
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "script": "create"
+      }
+    },
+    "build": {
+      "executor": "nx:run-script",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "script": "build"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-script",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "script": "dev"
+      }
+    },
+    "migrate": {
+      "executor": "nx:run-script",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "cwd": "{workspaceRoot}",
+        "script": "migrate"
+      }
+    }
+  },
+  "tags": []
+}

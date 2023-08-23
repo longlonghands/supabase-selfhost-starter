@@ -5,7 +5,7 @@
   "scripts": {
     "migrate": "node-pg-migrate",
     "create": "node ./scripts/create-new-migration-file.js",
-    "build": "rimraf ./out && node ./scripts/build-migrations.js",
+    "build": "rimraf ../../out/apps/migrations && node ./scripts/build-migrations.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec \"npm run build && npm run migrate up\"  --watch ./src   "
   },

@@ -36,12 +36,10 @@ function getMigrationFiles(dir) {
 const migrationFiles = getMigrationFiles(srcDir).sort((a, b) => a.timestamp - b.timestamp)
 // const migrationsDir = path.join(__dirname, '..', 'migrations')
 
-execSync('mkdir migrations')
-
 migrationFiles.forEach((m) => {
   const parsed = path.parse(m.filePath)
 
   execSync(
-    `npx esbuild ${m.filePath} --platform=node --bundle --packages=external --outfile=./out/${parsed.name}.js`
+    `npx esbuild ${m.filePath} --platform=node --bundle --packages=external --outfile=../../out/apps/migrations/${parsed.name}.js`
   )
 })

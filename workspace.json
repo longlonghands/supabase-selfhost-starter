@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "migrations": "apps/migrations",
+    "tsconfig": "packages/tsconfig",
+    "eslint-config-custom": "packages/eslint-config-custom"
+  },
+  "defaultProject": "migrations"
+}
